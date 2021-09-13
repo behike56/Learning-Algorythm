@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Triangle{
+
+    public static void main(String[] args){
+	Scanner stdIn = new Scanner(System.in);
+	int n;
+
+	System.out.println("Triangle");
+
+	do {
+	    System.out.print("短辺の長さ:");
+	    n = stdIn.next();
+	} while (n <= 0);
+    }
+
+}
