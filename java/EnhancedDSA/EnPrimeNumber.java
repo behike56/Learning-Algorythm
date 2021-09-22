@@ -12,10 +12,11 @@ class EnPrimeNumber {
      *　nの平方根以下のいずれの素数でも割り切れない。
      */
     public static void main(String[] args) {
-        //idea1();
+        idea1();
         idea2();
     }
     /*
+     * 3774回
      * 計算量としては平方根を取り入れたやり方の方が優れている。
      * このクラスでは、既知の素数のん全てで割り切れなかったものを
      * 素数としている。
@@ -38,10 +39,9 @@ class EnPrimeNumber {
 
             boolean flag = false;
 
-            for (int i = 1; i < prime.size(); i++){
+            for (int i = 1; prime.get(i) * prime.get(i) <= n; i++){
                 counter += 2;
-                int x = n % prime.get(i);
-                if (x == 0){
+                if (n % prime.get(i) == 0){
                     flag = true;
                     break;
                 }
@@ -55,20 +55,19 @@ class EnPrimeNumber {
         }
 
         // 求めたptr個の素数を表示
-        for (int i = 0; i < pIdx; i++){
-            System.out.println(prime.get(i));
-        }
+        // for (int i = 0; i < pIdx; i++){
+        //     System.out.println(prime.get(i));
+        // }
 
         System.out.println(counter);
     }
 
     /*
+     * 2978回
      * 既知の素数の、例えば１の位の素数である３、５、７の
      * で割り切れる1000以下の数字をあらかじめリストアップしておき、
      * このんリストにある数字の場合は検査を行わないことにすれば
      * 計算の回数は減らせる。
-     *
-     * 計算回数だけに囚われたあまり価値のないアルゴリズではあるが・・・
      */
     static void idea2(){
         List<Integer> prime = new LinkedList<>();
@@ -87,6 +86,44 @@ class EnPrimeNumber {
             ignore.add(i * 7);
         }
 
-        System.out.println(ignore);
+        int pIdx = 0;
+        int counter = 0;
+
+        prime.add(2);
+        prime.add(3);
+
+        // 小さい素数から割っていけば良い？
+        // 奇数のみ確かめる
+        for (int n = 5; n <= 1000;  n += 2){
+
+            boolean flag = false;
+
+            if (ignore.contains(n)) {
+                prime.add(n);
+                pIdx++;
+                continue;
+            }
+
+            for (int i = 1; prime.get(i) * prime.get(i) <= n; i++){
+                counter += 2;
+                if (n % prime.get(i) == 0){
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag) {
+                prime.add(n);
+                pIdx++;
+                counter++;
+            }
+        }
+
+        // 求めたptr個の素数を表示
+        // for (int i = 0; i < pIdx; i++){
+        //     System.out.println(prime.get(i));
+        // }
+
+        System.out.println(counter);
     }
 }
