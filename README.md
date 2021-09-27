@@ -9,6 +9,10 @@
 書籍に倣ってアルゴリズムを動かし確かめる。chap01などがそれに当たる。
 EnhancedDSAの中にあるのが自分で応用、強化したアルゴリズム。
 
+JavaとPythonnを手本に、GOとRustでアルゴリズムを再現。
+
 ## 使用した言語
 - Java
 - Python
+- GO
+- Rsut
