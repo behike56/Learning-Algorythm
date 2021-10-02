@@ -10,6 +10,21 @@ class BinSearch {
         print("x[0]: ")
         x[0] = readLine()
 
+        for (i in 0 until num) {
+            do {
+                print("x[" + i + "]: ")
+                x[i] = readLinne()
+            } while (x[i] < x[i - 1])
+        }
+
+        print("探す値：")
+        val ky: Int = readLine()
+        val idx: Int = binSearch(x, num, ky)
+
+        if (idx == -1)
+            print("その値の要素は存在しません。")
+        else
+            print("その値はx[" + idx + "]にあります。")
     }
 
     fun binSearch(a: IntArray, n: Int, key: Int) Int {
