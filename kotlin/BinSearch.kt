@@ -1,24 +1,23 @@
-
 class BinSearch {
     fun main() {
-        print(要素数:)
-        val num: Int = readLine()
+        print("要素数:")
+        val num: Int = readLine()?.toInt() ?: 0
         val x: IntArray(num)
 
         println("昇順に入力してください。")
 
         print("x[0]: ")
-        x[0] = readLine()
+        x[0] = readLine()?.toInt() ?: 0
 
         for (i in 0 until num) {
             do {
                 print("x[" + i + "]: ")
-                x[i] = readLinne()
+                x[i] = readLine()?.toInt() ?: 0
             } while (x[i] < x[i - 1])
         }
 
         print("探す値：")
-        val ky: Int = readLine()
+        val ky: Int = readLine()?.toInt() ?: 0
         val idx: Int = binSearch(x, num, ky)
 
         if (idx == -1)

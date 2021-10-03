@@ -1,4 +1,4 @@
-# Learning-Algorythm
+# Learning-Algorithm
 
 ## このリポジトリの目的
 1. アルゴリズムの性質を知るため
