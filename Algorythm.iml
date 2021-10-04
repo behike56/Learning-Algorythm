@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/java/chap02" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/java/chap03" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="15" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
