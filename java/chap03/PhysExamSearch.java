@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 class PhysExamSearch {
 
-    static class PhysData {
+    static class PhyscData {
         private String name;
         private int height;
         private double vision;
@@ -19,11 +19,13 @@ class PhysExamSearch {
             return name + " " + height + " " + vision;
         }
 
-        public static final Comparator<PhysData> HEIGHT_ORDER = new HeightOrderCOmparator();
+        public static final Comparator<PhyscData> HEIGHT_ORDER = new HeightOrderComparator();
 
-        private static class HeightOrderComparator implements Comparator<PhysData> {
-            return (d1.height > h2.height) ? 1 :
-                (d1.height < d2.height) ? -1 : 0;
+        private static class HeightOrderComparator implements Comparator<PhyscData> {
+            public int compare(PhyscData d1, PhyscData d2){
+                return (d1.height > d2.height) ? 1 :
+                    (d1.height < d2.height) ? -1 : 0;
+            }
         }
     }
 
